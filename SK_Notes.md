@@ -10,6 +10,7 @@ Setup:
 	Install node.js
 	create a project folder
 	initialize git in parent folder: 'git init'
+	Push repo onto GitHub
 
 Setting up the client/frontend:
 	cd to project folder and install react dependencies: 'npx create-react-app client'
@@ -17,6 +18,7 @@ Setting up the client/frontend:
 	Install bootstrap to make styling easier: 'npm install bootstrap'
 	Install react-router-dom to make routing to different URLs easier: 'npm install react-router-dom'
 	Install datepicker: 'npm install react-datepicker'
+
 Setting up the backend:
 	cd to root/project folder and create package.json file: 'npm init -y'
     Install required dependencies/packages: 'npm install express cors mongoose dotenv'
@@ -27,11 +29,16 @@ Setting up the backend:
     Start node.js server in backend folder: 'nodemon server' or 'nodemon start server.js'.  Turn off VPN to connect to MongoDB
 
 Deploy to Heroku:
-	cd to frontend folder and run 'npm run build' to create a build
+	Create app on Heroku
+	Go to Deploy, connect to GitHub, and enable automatic employment, so any pushes to GitHub master branch are pushed to Heroku
+
+
+Deploy to Heroku via CLI:
+	Ensure the port and db are referenced correctly to prod
+	cd to client folder and create a build: 'npm run build'
 	Install Heroku CLI via website to ensure it's automatically updated
 	Login to Heroku: 'heroku login -i'
-	Ensure the port and db are referenced correctly to prod
-	Add to package.json scripts: '"heroku-postbuild": "cd frontend && npm install && npm run build"'.  After building, this installs all packages and creates the build folder
+	Add to package.json scripts: '"heroku-postbuild": "cd client && npm install && npm run build"'.  After building, this installs all packages and creates the build folder
 	Run commands:
 		cd to root folder locally
 		Create folder on Heroku: 'heroku create sk-mern-exercise-tracker'
@@ -40,18 +47,18 @@ Deploy to Heroku:
 		Add a commit message: 'git commit -m "adding commit message"'
 		Push changes to Heroku: 'git push heroku master'
 		Open app: 'heroku open'
+	Connect GitHub to Heroku:
+		Run commands:
+			To connect to GitHub repo: 'git remote add origin https://github.com/sterlingku/mern-exercise-tracker.git'
+			To push to GitHub repo: 'git push origin master'
+		Connect GitHub repo under Deploy menu on Heroku and click on Enable Automatic Deploys
 
-Connect GitHub to Heroku:
-	Run commands:
-		To connect to GitHub repo: 'git remote add origin https://github.com/sterlingku/mern-exercise-tracker.git'
-		To push to GitHub repo: 'git push origin master'
-	Connect GitHub repo under Deploy menu on Heroku and click on Enable Automatic Deploys
 
 Troubleshooting:
 	Add "engines" in pakcage.json and add the node version to ensure Heroku runs the correct version
 	Heroku runs whatever is in the Procfile first, else it runs the "scripts: start" in package.json
 	Ensure "react" is under the 'dependencies' and not 'devDependencies'
-	If you are building for development purposes, run: 'heroku config:set NPM_CONFIG_PRODUCT=true YARN_PRODUCTION=true' to ensure installing only packages under dependencies and not the devDependencies
+	If building for development purposes, run: 'heroku config:set NPM_CONFIG_PRODUCT=true YARN_PRODUCTION=true' to ensure installing only packages under dependencies and not the devDependencies
 	Run 'heroku logs --tail' to troubleshoot issues
 	Run 'heroku run bash' to access entire Heroku folder structure
 	Building and deploying to Heroku might remove some node_modules required to run locally
