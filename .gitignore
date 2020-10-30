@@ -9,7 +9,7 @@
 # testing
 /coverage
 
-# production
+# production, ignore this because Heroku will build it
 /client/build
 
 # misc
@@ -25,3 +25,6 @@ yarn-error.log*
 
 # visual studio preferences
 /.vs
+
+# don't include in repo, add onto Heroku Config Vars
+.env

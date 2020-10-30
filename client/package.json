@@ -1,5 +1,5 @@
 {
-    "name": "mern-exercise-tracker",
+    "name": "client",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -42,8 +42,5 @@
     },
     "devDependencies": {
         "react": "^17.0.1"
-    },
-    "engines": {
-        "node": "12.19.0"
     }
 }

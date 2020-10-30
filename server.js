@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require("path");
 
 // to use variables in .env file
 require('dotenv').config();
@@ -34,11 +35,19 @@ const usersRouter = require('./routes/users');
 // when people go to the specified locations below, load the files mentioned above
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+// looks in the following folder for static files (e.g. pictures)
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 // tells Heroku to run the following path if node environment is running in prod
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
+// a 'catch all' route handler.  needs to be near the bottom of the file so that it will only be enacted if the API routes above it don't handle the request
+// it's in charge of sending the main index.html file back to the client if it didn't receive a request it recognized otherwise
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // starts the server
 app.listen(port, () => {
