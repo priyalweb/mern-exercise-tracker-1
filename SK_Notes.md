@@ -1,5 +1,5 @@
 Project from: https://www.youtube.com/watch?v=7CqJlxBYj-M
-Heroku deployment from: https://www.youtube.com/watch?v=e1LaekAnVIM
+Heroku deployment from: https://coursework.vschool.io/deploying-mern-with-heroku/
 
 MongoDB is a document based open source db,
 Express is a web application framework for node.js,
@@ -11,6 +11,7 @@ Setup:
 	create a project folder
 	initialize git in parent folder: 'git init'
 	Push repo onto GitHub
+	Add to .gitignore folder: /.vs, .env, /client/build, /client/node_modules, /node_modules
 
 Setting up the client/frontend:
 	cd to project folder and install react dependencies: 'npx create-react-app client'
@@ -31,6 +32,11 @@ Setting up the backend:
 Deploy to Heroku:
 	Create app on Heroku
 	Go to Deploy, connect to GitHub, and enable automatic employment, so any pushes to GitHub master branch are pushed to Heroku
+	Go to Settings Config Vars and add server key/value
+	Add to server's package.json, so Heroku knows what scripts to run when building:     
+		"scripts": {
+			"start": "node server.js",
+			"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build" 
 
 
 Deploy to Heroku via CLI:
