@@ -35,7 +35,7 @@ const usersRouter = require('./routes/users');
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 
-// tells Heroku to run the following path if it's running in prod
+// tells Heroku to run the following path if node environment is running in prod
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("frontend/build"));
 }

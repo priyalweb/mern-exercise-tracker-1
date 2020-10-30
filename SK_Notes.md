@@ -9,6 +9,7 @@ Node.js is a js run-time environment that executes js code outide of a browser (
 Setup:
 	Install node.js
 	create a project folder with 'frontend' and 'backend' folders
+	initialize git in parent folder: 'git init'
 
 Setting up the frontend:
 	cd to 'frontend' folder and install react dependencies in frontend folder: 'npx create-react-app <app-name>'
