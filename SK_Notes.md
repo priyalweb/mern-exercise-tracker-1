@@ -8,23 +8,23 @@ Node.js is a js run-time environment that executes js code outide of a browser (
 
 Setup:
 	Install node.js
-	create a project folder with 'frontend' and 'backend' folders
+	create a project folder
 	initialize git in parent folder: 'git init'
 
-Setting up the frontend:
-	cd to 'frontend' folder and install react dependencies in frontend folder: 'npx create-react-app <app-name>'
-	Start frontend in the main react folder: 'npm start'
+Setting up the client/frontend:
+	cd to project folder and install react dependencies: 'npx create-react-app client'
+	cd to client folder and start react: 'npm start'
 	Install bootstrap to make styling easier: 'npm install bootstrap'
 	Install react-router-dom to make routing to different URLs easier: 'npm install react-router-dom'
 	Install datepicker: 'npm install react-datepicker'
 Setting up the backend:
-	cd to 'backend' folder and create package.json file: 'npm init -y'
+	cd to root/project folder and create package.json file: 'npm init -y'
     Install required dependencies/packages: 'npm install express cors mongoose dotenv'
 		cors is an express.js middleware that allows ajex requests to skip origin resource policies to access resources from remote hosts
 		mongoose MongoDB schema-based solution to model application data via node.js
 		dotenv loads environment variable from a file (.env)
 		install nodemon, which restarts the server whenever changes are made: 'npm (or sudo) install -g nodemon'
-    Start node.js server in backend folder: 'nodemon server'.  Turn off VPN to connect to MongoDB
+    Start node.js server in backend folder: 'nodemon server' or 'nodemon start server.js'.  Turn off VPN to connect to MongoDB
 
 Deploy to Heroku:
 	cd to frontend folder and run 'npm run build' to create a build

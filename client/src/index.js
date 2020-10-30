@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // custom css file
 import './index.css';
-// where the frontend react app is created
+// where the client react app is created
 import App from './App';
 
 // loading the app into the element 'root'

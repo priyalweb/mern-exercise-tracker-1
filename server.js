@@ -37,7 +37,7 @@ app.use('/users', usersRouter);
 
 // tells Heroku to run the following path if node environment is running in prod
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("frontend/build"));
+    app.use(express.static("client/build"));
 }
 
 // starts the server
