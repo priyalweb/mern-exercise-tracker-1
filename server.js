@@ -9,7 +9,7 @@ require('dotenv').config();
 
 // create express server
 const app = express();
-//the port of the server.  Tell server to use whatever port is or use 5000 if running locally
+//the port of the server.  Tell server to use whatever port it is or use 5000 if running locally
 const port = process.env.PORT || 5000;
 
 app.use(cors());
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // start MongoDB connection.  Looks at the .env folder for connection string.  CAN'T BE ON VPN
-// pass in the uri from .env file
+// pass in the uri from .env file or ATLAS_URI variable in Heroku
 const uri = process.env.ATLAS_URI;
 // properties here are just required due to MongoDB code changes
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
