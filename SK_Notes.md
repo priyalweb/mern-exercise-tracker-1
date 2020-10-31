@@ -27,7 +27,7 @@ Setting up the backend:
 		mongoose MongoDB schema-based solution to model application data via node.js
 		dotenv loads environment variable from a file (.env)
 		install nodemon, which restarts the server whenever changes are made: 'npm (or sudo) install -g nodemon'
-    Start node.js server in backend folder: 'nodemon server' or 'nodemon start server.js'.  Turn off VPN to connect to MongoDB
+    Start nodemon in backend folder: 'nodemon server' or 'nodemon start server.js'.  Turn off VPN to connect to MongoDB
 
 Deploy to Heroku:
 	Create app on Heroku
