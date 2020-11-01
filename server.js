@@ -20,7 +20,7 @@ app.use(express.json());
 // pass in the uri from .env file or ATLAS_URI variable in Heroku
 const uri = process.env.ATLAS_URI;
 // properties here are just required due to MongoDB code changes
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
 );
 const connection = mongoose.connection;
 // after one connection, log message below
