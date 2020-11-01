@@ -63,11 +63,10 @@ Deploy to Heroku via CLI:
 
 
 Troubleshooting:
-	Add "engines" in pakcage.json and add the node version to ensure Heroku runs the correct version
+	Run 'heroku logs --tail --app sk-mern-exercise-tracker' to troubleshoot issues and see server activity
+	Run 'heroku run bash' to access entire Heroku folder structure
+	Add "engines" in package.json and add the node version to ensure Heroku runs the correct version
 	Heroku runs whatever is in the Procfile first, else it runs the "scripts: start" in package.json
 	Ensure "react" is under the 'dependencies' and not 'devDependencies'
 	If building for development purposes, run: 'heroku config:set NPM_CONFIG_PRODUCT=true YARN_PRODUCTION=true' to ensure installing only packages under dependencies and not the devDependencies
-	Run 'heroku logs --tail' to troubleshoot issues
-	Run 'heroku run bash' to access entire Heroku folder structure
 	Building and deploying to Heroku might remove some node_modules required to run locally
-	add a package.json file to the root folder so Heroku can detect which language to use
