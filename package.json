@@ -28,6 +28,6 @@
     },
     "homepage": "https://github.com/sterlingku/mern-exercise-tracker#readme",
     "engines": {
-        "node": "12.19.0"
+        "node": "12.x"
     }
 }
