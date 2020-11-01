@@ -30,6 +30,7 @@ Setting up the backend:
     Start nodemon in backend folder: 'nodemon server' or 'nodemon start server.js'.  Turn off VPN to connect to MongoDB
 
 Deploy to Heroku:
+	Remove references to localhost (e.g. change axios.delete('http://localhost:5000/exercises/' + id) to axios.delete('/exercises/' + id)
 	Create app on Heroku
 	Go to Deploy, connect to GitHub, and enable automatic employment, so any pushes to GitHub master branch are pushed to Heroku
 	Go to Settings Config Vars and add server key/value
