@@ -23,7 +23,7 @@ export default class ExercisesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('/exercises/')
             .then(response => {
                 this.setState({ exercises: response.data })
             })
@@ -34,7 +34,7 @@ export default class ExercisesList extends Component {
 
     // takes in a MongoDB id to delete
     deleteExercise(id) {
-        axios.delete('http://localhost:5000/exercises/' + id)
+        axios.delete('/exercises/' + id)
             .then(res => console.log(res.data));
         //  react updates the page with the new state, which does not include the deleted id.  '_id' is part of the MongoDB field
         this.setState({

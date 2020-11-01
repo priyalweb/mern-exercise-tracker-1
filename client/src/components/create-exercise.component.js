@@ -30,7 +30,7 @@ export default class CreateExercises extends Component {
     // react lifecycle method that is called right before the page loads
     componentDidMount() {
         // connect to backend, which is connected to the db
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             // take the response and returns username
             .then(response => {
                 if (response.data.length > 0) {
@@ -79,7 +79,7 @@ export default class CreateExercises extends Component {
 
         console.log(exercise)
 
-        axios.post('http://localhost:5000/exercises/add', exercise)
+        axios.post('/exercises/add', exercise)
             .then(res => console.log(res.data));
 
         // take user back to homepage after submitting exercise
