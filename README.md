@@ -75,3 +75,5 @@ Troubleshooting:
 	Ensure "react" is under the 'dependencies' and not 'devDependencies'
 	If building for development purposes, run: 'heroku config:set NPM_CONFIG_PRODUCT=true YARN_PRODUCTION=true' to ensure installing only packages under dependencies and not the devDependencies
 	Building and deploying to Heroku might remove some node_modules required to run locally
+	Wherever axios is used, need to add 'http://localhost:5000' when testing locally
+	Turn off VPN if there is a connection issue

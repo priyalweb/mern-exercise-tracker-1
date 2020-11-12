@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import ExercisesList from './exercises-list.component';
 // axios is a promise based HTTP client to connect to node.js
 import axios from 'axios';
+
 
 export default class CreateExercises extends Component {
     constructor(props) {
@@ -30,6 +30,7 @@ export default class CreateExercises extends Component {
     // react lifecycle method that is called right before the page loads
     componentDidMount() {
         // connect to backend, which is connected to the db
+        //axios.get('http://localhost:5000/users/')  // uncomment to test locally
         axios.get('/users/')
             // take the response and returns username
             .then(response => {

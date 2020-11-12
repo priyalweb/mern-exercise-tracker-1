@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 // implemented as a functional component.  Used for accepting props and returning jsx
 const Exercise = props => (
     <tr>
