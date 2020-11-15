@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const path = require("path");
+const path = require('path');
 
 // to use variables in .env file
 require('dotenv').config();

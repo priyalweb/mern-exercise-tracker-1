@@ -1,4 +1,4 @@
-// most comp/onents include the react and router imports
+// most components include the react and router imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
