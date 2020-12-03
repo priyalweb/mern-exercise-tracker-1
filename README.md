@@ -13,7 +13,6 @@
 - Initialize git in parent folder: 'git init'
 - Add to .gitignore folder: /.vs, .env, /client/build, /client/node_modules, /node_modules
 - Push repo onto GitHub
-	
 
 #### Setting up the client/frontend:
 - cd to project folder and install react dependencies: 'npx create-react-app client'
