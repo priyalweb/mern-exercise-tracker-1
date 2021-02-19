@@ -3,7 +3,7 @@ const router = require('express').Router();
 // uses the User model
 let User = require('../models/user.model');
 
-// handles get http requests.  POST on Postman: http://localhost:5000/user/add
+// handles get http requests
 router.route('/').get((req, res) => {
     // '.find()' is a mongoose command
     User.find()
@@ -13,7 +13,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// handles post http requests
+// handles post http requests.  POST on Postman: http://localhost:5000/user/add
 router.route('/add').post((req, res) => {
     const username = req.body.username;
     //create new instance of user
